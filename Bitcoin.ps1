@@ -43,8 +43,7 @@ while (1 -eq 1) {
 	Clear-Host
 	$data = Invoke-WebRequest -Uri https://api.coinbase.com/v2/prices/BTC-USD/sell -Method Get
 	$object = $data | ConvertFrom-Json
-	Write-Host $object.data.base
-	Write-Host $object.data.currency
-	Write-Host $object.data.amount
+	Write-Host ('1 ' + $object.data.base)
+	Write-Host ('$' + $object.data.amount)
 	Start-Sleep -s $sec
 }
